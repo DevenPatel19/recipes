@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <title>Recipes</title>
+  </head>
+  <body>
+    <div>
+      <h1>Welcome, {{ user.first_name }}</h1>
+      <div class="text-end mr-5 gap-2 ">
+            <a class="btn btn-primary" href="/recipes/new">+ Create</a>
+            <a class="btn btn-danger mr-5"href="/logout">logout</a>
+        </div>
+    </div>
+    <div>
+      <h2>{{recipe.name}}</h2>
+      <h4>posted by: {{ recipe.creator.first_name}}</h4>
+      <div class="card mb-3" style="max-width: 540px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <p>Description:</p>
+            <p>Under 30 minutes?</p>
+            <p>Instructions</p>
+            <p>Date Made</p>
+
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+            <p>{{ recipe.description }}</p>
+                {% if recipe.is_under_30 > 0 %}
+                <p>Yes</p>
+                {% else %}
+                <p>No</p>
+                {% endif %}
+            <p>{{ recipe.instructions }}abcd</p>
+            <p>{{ recipe.created_at }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
