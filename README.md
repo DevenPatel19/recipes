@@ -1,4 +1,4 @@
-# recipes
+# Recipes mini-project
 ## Utilizing HTML, Bootstrap, Python, Flask(also Bcrypt for password hashing).
 ## Created a One-to-Many relationship between a User and Recipes(child) tables.
 ## Allows for accurate routing for scalability
